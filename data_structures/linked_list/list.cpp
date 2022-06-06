@@ -19,10 +19,17 @@ node_t* insert_before_head(node_t* head, int val)
 
 }
 
-node_t* insert_between(node_t* x, node_t* y)
+node_t* insert_after(node_t* start, int val)
 {
 
+    node_t* tmp = new node_t;
+    start->next = tmp;
+    tmp->value = val;
+
+    return tmp;
+
 }
+
 
 void print_list(node_t* start)
 {
@@ -71,10 +78,11 @@ int main(void)
     head->next = nullptr;
     head->value =999;
 
-    node_t* jeden = insert_before_head(head, 123);
-
-    reverse_list(jeden);
+    node_t* jeden = insert_after(head, 500);
+    
+    
     reverse_list(head);
+
 
     print_list(jeden);
 
