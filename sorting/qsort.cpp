@@ -1,20 +1,23 @@
+
 #include <iostream>
 #include <algorithm>
 
-void quicksort(int* arr, int first, int last)
+
+void qsort(int* arr, int first, int last)
 {
+
+    if(first >= last)
+        return;
+
+    int p = first;
+    int q = last;
     int pivot = arr[(first + last) / 2];
-
-
-    int p = first, q = last;
-    
-    //x
 
     while(p <= q)
     {
+    
         while(arr[p] < pivot)
             p++;
-
         while(arr[q] > pivot)
             q--;
 
@@ -24,23 +27,25 @@ void quicksort(int* arr, int first, int last)
             p++;
             q--;
         }
+
     }
 
+    qsort(arr, first, q);    
+    qsort(arr, p, last);
 
-    if(q > first) 
-        quicksort(arr, first, q);
 
-    if(p < last) 
-        quicksort(arr, p, last);
 }
 
 int main(void)
 {
 
-    int arr[] = {5,16,167,13,54};
-    quicksort(arr, 0, 4);
+    int arr[] = {0,4, 5,1,3,2};
+    
+    qsort(arr, 0, 5);
 
     for(auto a : arr)
         std::cout << a << " ";
     std::cout << std::endl;
+
+
 }
