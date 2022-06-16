@@ -8,7 +8,7 @@ uint64_t fib(uint64_t index)
 {
     if(fib_map.find(index) != fib_map.end())
     {
-        std::cout << "i know it!"<< std::endl;
+        //std::cout << "i know it!"<< std::endl;
         return fib_map[index];
     }
 
@@ -26,6 +26,7 @@ int main(void)
 {
     
     uint64_t index;
+    std::cout << "which number of fibonacci string you want to get: ";
     std::cin >> index;
 
     std::cout << fib(index) << std::endl;

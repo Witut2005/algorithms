@@ -101,6 +101,6 @@ int main(void)
         tree.insert(i);
 
 
-    std::cout << "id_second first is " << how_far(id_first,id_second) << " units away from id_second" << std::endl;
+    std::cout << "first is " << how_far(id_first,id_second) << " units away from second one" << std::endl;
 
 }
